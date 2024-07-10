@@ -1,9 +1,3 @@
-<%-- 
-    Document   : formulario-productos
-    Created on : 3/07/2024, 09:46:32
-    Author     : informatica
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import = "java.util.ArrayList" %>
 

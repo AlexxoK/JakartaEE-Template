@@ -1,10 +1,6 @@
-<%-- 
-    Document   : lista-productos
-    Created on : 3/07/2024, 10:32:32
-    Author     : informatica
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import ="java.util.List" %>
+<%@page import ="org.diegomonterroso.webapp.model.Producto" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -57,11 +53,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Computadora Dell</td>
-                            <td>Computador coreI7.</td>
-                            <td>Dell</td>
-                            <td>Q200.00</td>
+                            <% List<Producto> productos = (List)request.getAttribute("productos"); %>
+                            <% for(){
+                                }
+                            %>
+                        </tr>
                     </tbody>
                 </table>
             </div>
