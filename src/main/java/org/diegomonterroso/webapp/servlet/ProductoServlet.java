@@ -12,7 +12,7 @@ import java.util.List;
 import org.diegomonterroso.webapp.model.Producto;
 import org.diegomonterroso.webapp.service.ProductoService;
 
-@WebServlet("/producto-servlet/")
+@WebServlet("/producto-servlet")
 @MultipartConfig
 
 public class ProductoServlet extends HttpServlet{
@@ -29,7 +29,7 @@ public class ProductoServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Producto> productos = ps.listarProductos();
         req.setAttribute("productos",productos);
-        req.getRequestDispatcher("/lista-producto/lista.producto.jsp").forward(req, resp);
+        req.getRequestDispatcher("/lista-productos/lista-productos.jsp").forward(req, resp);
     }
     
     @Override

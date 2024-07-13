@@ -25,10 +25,10 @@
                                 <a class="nav-link active" aria-current="page" href="../index.jsp">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="formulario-productos/formulario-productos.jsp">Formulario de Productos</a>
+                                <a class="nav-link" href="./formulario-productos/formulario-productos.jsp">Formulario de Productos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="lista-productos/lista-productos.jsp">Lista de Productos</a>
+                                <a class="nav-link" href="./producto-servlet">Lista de Productos</a>
                             </li>
                         </ul>
                     </div>

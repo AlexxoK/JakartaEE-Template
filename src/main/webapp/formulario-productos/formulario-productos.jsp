@@ -30,7 +30,7 @@
                                 <a class="nav-link" href="../formulario-productos/formulario-productos.jsp">Formulario de Productos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../lista-productos/lista-productos.jsp">Lista de Productos</a>
+                                <a class="nav-link" href="../producto-servlet">Lista de Productos</a>
                             </li>
                         </ul>
                     </div>
@@ -52,7 +52,7 @@
             </ul>
         </div>
         <div class="container mt-5 w-75">
-            <form action="/SGBDProductos/producto-servlet/" method="post" enctype="multipart/form-data">
+            <form action="/SGBDProductos/producto-servlet" method="post" enctype="multipart/form-data">
                 <div class="form-floating mt-5">
                     <input class="form-control bg-info-subtle text-info-emphasis" id="nombreProducto" name="nombreProducto" type=text placeholder="">
                     <label for="nombreProducto">Nombre de Producto</label>
