@@ -52,8 +52,8 @@
                 <version>2.2</version>
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
-                    <username>root</username>
-                    <password>admin</password>
+                    <username>diegoMonterroso</username>
+                    <password>alex-027</password>
                 </configuration>
             </plugin>
             <plugin>

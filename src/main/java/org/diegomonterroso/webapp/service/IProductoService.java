@@ -7,7 +7,7 @@ public interface IProductoService {
     
     public List<Producto> listarProductos();
     
-    public void agregarProducto();
+    public void agregarProducto(Producto producto);
     
     public void eliminarProducto(int productoId);
     

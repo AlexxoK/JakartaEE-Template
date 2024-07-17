@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import org.diegomonterroso.webapp.model.Producto;
 import org.diegomonterroso.webapp.service.ProductoService;
@@ -25,6 +24,7 @@ public class ProductoServlet extends HttpServlet{
         this.ps = new ProductoService();
     }
     
+    // Listar, buscar
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Producto> productos = ps.listarProductos();
@@ -32,21 +32,27 @@ public class ProductoServlet extends HttpServlet{
         req.getRequestDispatcher("/lista-productos/lista-productos.jsp").forward(req, resp);
     }
     
+    // Agregar, eliminar, editar
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ArrayList<String> producto = new ArrayList<>();
+        String path = req.getPathInfo();
         
-        String nombreProducto = req.getParameter("nombreProducto");
-        String descripcionProducto = req.getParameter("descripcionProducto");
-        String marca= req.getParameter("marcaProducto");
-        double precio=Double.parseDouble(req.getParameter("precioProducto"));
+        if(path == null || path.equals("/")){
+            agregarProducto(req, resp);
+        }
+    }
+    
+    public void agregarProducto(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String nombre = req.getParameter("nombreProducto");
+        String marca = req.getParameter("marcaProducto");
+        String descripcion = req.getParameter("descripcionProducto");
+        Double precio = Double.parseDouble(req.getParameter("precioProducto"));
         
-        producto.add(nombreProducto);
-        producto.add(descripcionProducto);
-        producto.add(marca);
-        producto.add(Double.toString(precio));
+        ps.agregarProducto(new Producto(nombre, marca, descripcion, precio));
         
-        req.setAttribute("producto", producto);
-        getServletContext().getRequestDispatcher("/formulario-productos/formulario-productos.jsp").forward(req, resp);
+        // Otra manera
+        // resp.sendRedirect("/SGBDProductos/index.jsp");
+        
+        resp.sendRedirect(req.getContextPath() + "/index.jsp");
     }
 }
